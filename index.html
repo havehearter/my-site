@@ -1,171 +1,88 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 【区域 1】这里修改浏览器标签页上显示的名字 -->
-    <title>我的个人主页 | 正在建设中</title>
-    <style>
-        /* ================= 配置区域：在这里修改颜色和字体 ================= */
-        :root {
-            /* 1. 主题色 (按钮、大标题的颜色) */
-            /* 你可以去 https://colorhunt.co/ 找喜欢的颜色代码替换下面这个 #2563eb */
-            --primary-color: #2563eb; 
-            
-            /* 2. 背景颜色 (整个页面的底色) */
-            --bg-color: #f3f4f6;
-            
-            /* 3. 卡片背景 (中间白色盒子的颜色) */
-            --card-bg: #ffffff;
-            
-            /* 4. 文字颜色 */
-            --text-main: #1f2937;       /* 主要文字 */
-            --text-sub: #4b5563;        /* 次要文字 */
-        }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-main);
-            background-color: var(--bg-color);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+  <head>
+    <title>关于我 · 极简个人页</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="index,follow" />
+    <meta name="generator" content="GrapesJS Studio" />
+    <meta name="description" content="一页式极简个人介绍：姓名、简介、技能、项目与联系方式。" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet" />
+  </head>
 
-        .container {
-            background-color: var(--card-bg);
-            padding: 3rem 2rem; /* 上下内边距 3rem，左右 2rem */
-            border-radius: 16px; /* 圆角大小，数字越大越圆 */
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-            max-width: 500px; /* 卡片最大宽度 */
-            width: 90%;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .container:hover {
-            transform: translateY(-5px); /* 鼠标放上去微微上浮的效果 */
-        }
-
-        h1 {
-            color: var(--primary-color);
-            margin-top: 0;
-            margin-bottom: 1rem;
-            font-size: 2.2rem;
-            font-weight: 800;
-        }
-
-        p {
-            margin-bottom: 2rem;
-            color: var(--text-sub);
-            font-size: 1.1rem;
-        }
-
-        .icon-box {
-            font-size: 4rem; /* 图标大小 */
-            margin-bottom: 1rem;
-            display: inline-block;
-            animation: float 3s ease-in-out infinite; /* 添加浮动动画 */
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px; /* 按钮圆角，50px 就是完全椭圆 */
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn:hover {
-            background-color: #1d4ed8; /* 鼠标悬停时的深色 */
-            transform: scale(1.05); /* 鼠标悬停时稍微变大 */
-            box-shadow: 0 6px 8px rgba(37, 99, 235, 0.4);
-        }
-
-        .footer {
-            margin-top: 2.5rem;
-            font-size: 0.85rem;
-            color: #9ca3af;
-            border-top: 1px solid #e5e7eb;
-            padding-top: 1.5rem;
-        }
-
-        .social-links {
-            margin-top: 1.5rem;
-        }
-        
-        .social-links a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: var(--text-sub);
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* 动画定义 */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .container {
-            animation: fadeIn 0.8s ease-out;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <!-- 【区域 2】这里修改大图标 -->
-        <!-- 你可以在这里输入任何 emoji，比如 🚀, 💻, 🎨, 🌍 -->
-        <div class="icon-box">🚀</div>
-        
-        <!-- 【区域 3】这里修改大标题 -->
-        <h1>欢迎来到我的空间</h1>
-        
-        <!-- 【区域 4】这里修改介绍文字 (<br> 代表换行) -->
-        <p>
-            
-            Hello，I m Jimson，this page Founder<br>
-            你好！我是这里的站长。<br>
-            网站正在精心打磨中，敬请期待更多精彩内容。
+  <body id="i70g" class="gjs-t-body cls-e0gy3y">
+    <header class="header" id="i2qvw">
+      <div class="header-container" id="i9zxc">
+        <a href="#top" class="group brand-link" id="ihi25">
+          <span class="brand-mark" id="ijjrj"></span>
+          <span class="gjs-t-h2 group-hover:opacity-80 brand-name" id="ivdhl">Welcome to haveheart.top</span>
+        </a>
+        <nav id="igfd2" class="primary-nav">
+          <a href="" id="ihdza" class="gjs-t-button nav-cta">
+            <img alt="" aria-hidden="true" src="https://api.iconify.design/lucide-message-circle.svg?color=white" id="i9n62" class="icon" /> 联系我
+            <br id="ie60y" />Connect Me
+          </a>
+        </nav>
+      </div>
+    </header>
+    <main id="top" class="main-content">
+      <section class="hero-section" id="icgex">
+        <div class="gjs-t-border hero-card" id="i2cqp">
+          <div id="i628f" class="hero-inner">
+            <div id="ijy5b" class="hero-text">
+              <h1 id="ibz2j" class="gjs-t-h1 hero-title">你好，我是Jimson
+                <br id="i3hy9" />Hello, I'm Jimson.
+              </h1>
+              <p id="il3w7" class="hero-subtitle">一个为生活而工作的普通人，发现自己的业余爱好，所以建立这个网址
+                <br id="i9cdf" />An ordinary person working to make a living discovered their hobby and created this website.
+              </p>
+              <div id="iu47a" class="hero-actions">
+                <a href="mailto:hello@example.com" id="il04o" class="gjs-t-button primary-button">网站还在建设所以暂时无法联系我
+                  <br id="iq1lb" />The website is still under construction, so I cannot contact you at the moment.
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="about-section"></section>
+      <section id="skills" class="skills-section"></section>
+      <section id="projects" class="projects-section"></section>
+      <section id="contact" class="contact-section">
+        <div class="gjs-t-border contact-card" id="ixktkt">
+          <div class="contact-header" id="ixqhla">
+            <h2 class="gjs-t-h2 section-title" id="irqrmo">联系我</h2>
+            <div class="divider" id="il9g53"></div>
+          </div>
+          <div id="i72wyy" class="contact-grid">
+            <div id="ihozmc" class="contact-info">
+              <a href="mailto:hello@example.com" id="iu1c7n" class="contact-link">
+                <img alt="" aria-hidden="true" src="https://api.iconify.design/lucide-mail.svg?color=%23181818" id="iasiql" class="icon" />
+                hello@example.com
+              </a>
+              <div id="icpxyt" class="social-row">
+                <a href="#" id="inkiir" class="social-link">
+                  <img alt="" aria-hidden="true" src="https://api.iconify.design/lucide-github.svg?color=%23181818" id="ispequ" class="icon" />
+                  GitHub
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="i8zc7o">
+      <div class="footer-container" id="ikggyb">
+        <p class="footer-copy" id="iv0eft">©<span id="id4tbr">2026</span> · 保留所有权利
+          <br id="is6cr" />© 2026 · All rights reserved
         </p>
-        
-        <!-- 【区域 5】这里修改按钮文字和链接 -->
-        <!-- href="" 里面填链接，比如 mailto:你的邮箱 或者 https://你的微博 -->
-        <a href="mailto:your-email@example.com" class="btn">联系我</a>
+        <a href="#top" class="gjs-t-link back-to-top" id="iya4d1">
+          回到顶部
+          <img alt="" aria-hidden="true" src="https://api.iconify.design/lucide-arrow-up-right.svg?color=%23cf549e" class="icon" id="iq6mgt" />
+        </a>
+      </div>
+    </footer>
+  </body>
 
-        <!-- 【区域 6】社交链接 (可选，不需要可以删除整个 div) -->
-        <div class="social-links">
-            <a href="#">GitHub</a>
-            <a href="#">Twitter</a>
-            <a href="#">Blog</a>
-        </div>
-
-        <!-- 【区域 7】底部版权信息 -->
-        <div class="footer">
-            &copy; 2026 我的个人网站。All rights reserved.
-        </div>
-    </div>
-
-</body>
 </html>
