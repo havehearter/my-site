@@ -3,19 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎来到我的网站</title>
+    <!-- 【区域 1】这里修改浏览器标签页上显示的名字 -->
+    <title>我的个人主页 | 正在建设中</title>
     <style>
+        /* ================= 配置区域：在这里修改颜色和字体 ================= */
         :root {
-            --primary-color: #2563eb;
-            --text-color: #1f2937;
+            /* 1. 主题色 (按钮、大标题的颜色) */
+            /* 你可以去 https://colorhunt.co/ 找喜欢的颜色代码替换下面这个 #2563eb */
+            --primary-color: #2563eb; 
+            
+            /* 2. 背景颜色 (整个页面的底色) */
             --bg-color: #f3f4f6;
+            
+            /* 3. 卡片背景 (中间白色盒子的颜色) */
             --card-bg: #ffffff;
+            
+            /* 4. 文字颜色 */
+            --text-main: #1f2937;       /* 主要文字 */
+            --text-sub: #4b5563;        /* 次要文字 */
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
+            color: var(--text-main);
             background-color: var(--bg-color);
             margin: 0;
             padding: 0;
@@ -27,47 +38,90 @@
 
         .container {
             background-color: var(--card-bg);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            max-width: 600px;
+            padding: 3rem 2rem; /* 上下内边距 3rem，左右 2rem */
+            border-radius: 16px; /* 圆角大小，数字越大越圆 */
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            max-width: 500px; /* 卡片最大宽度 */
             width: 90%;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px); /* 鼠标放上去微微上浮的效果 */
         }
 
         h1 {
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
-            font-size: 2rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            font-weight: 800;
         }
 
         p {
-            margin-bottom: 1.5rem;
-            color: #4b5563;
+            margin-bottom: 2rem;
+            color: var(--text-sub);
+            font-size: 1.1rem;
+        }
+
+        .icon-box {
+            font-size: 4rem; /* 图标大小 */
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite; /* 添加浮动动画 */
         }
 
         .btn {
             display: inline-block;
             background-color: var(--primary-color);
             color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
+            padding: 0.8rem 2rem;
+            border-radius: 50px; /* 按钮圆角，50px 就是完全椭圆 */
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.3);
         }
 
         .btn:hover {
-            background-color: #1d4ed8;
+            background-color: #1d4ed8; /* 鼠标悬停时的深色 */
+            transform: scale(1.05); /* 鼠标悬停时稍微变大 */
+            box-shadow: 0 6px 8px rgba(37, 99, 235, 0.4);
         }
 
         .footer {
-            margin-top: 2rem;
-            font-size: 0.875rem;
+            margin-top: 2.5rem;
+            font-size: 0.85rem;
             color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 1.5rem;
         }
 
-        /* 简单的动画效果 */
+        .social-links {
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: var(--text-sub);
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* 动画定义 */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -81,19 +135,35 @@
 <body>
 
     <div class="container">
-        <!-- 这里可以放你的头像或Logo -->
-        <div style="font-size: 3rem; margin-bottom: 1rem;">🚀</div>
+        <!-- 【区域 2】这里修改大图标 -->
+        <!-- 你可以在这里输入任何 emoji，比如 🚀, 💻, 🎨, 🌍 -->
+        <div class="icon-box">🚀</div>
         
-        <h1>网站正在建设中</h1>
+        <!-- 【区域 3】这里修改大标题 -->
+        <h1>欢迎来到我的空间</h1>
+        
+        <!-- 【区域 4】这里修改介绍文字 (<br> 代表换行) -->
         <p>
-            你好！这是我的新域名。<br>
-            目前网站正在部署中，精彩内容即将上线。
+            
+            Hello，I m Jimson，this page Founder<br>
+            你好！我是这里的站长。<br>
+            网站正在精心打磨中，敬请期待更多精彩内容。
         </p>
         
+        <!-- 【区域 5】这里修改按钮文字和链接 -->
+        <!-- href="" 里面填链接，比如 mailto:你的邮箱 或者 https://你的微博 -->
         <a href="mailto:your-email@example.com" class="btn">联系我</a>
 
+        <!-- 【区域 6】社交链接 (可选，不需要可以删除整个 div) -->
+        <div class="social-links">
+            <a href="#">GitHub</a>
+            <a href="#">Twitter</a>
+            <a href="#">Blog</a>
+        </div>
+
+        <!-- 【区域 7】底部版权信息 -->
         <div class="footer">
-            &copy; 2026 我的个人网站. All rights reserved.
+            &copy; 2026 我的个人网站。All rights reserved.
         </div>
     </div>
 
